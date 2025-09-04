@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Product preview card component</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Fraunces:wght@700&display=swap"
+      rel="stylesheet">
+    <style>
+    :root {
+      --green-500: hsl(158, 36%, 37%);
+      --green-700: hsl(158, 42%, 18%);
+      --black: hsl(212, 21%, 14%);
+      --grey: hsl(228, 12%, 48%);
+      --cream: hsl(30, 38%, 92%);
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--cream);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: row;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10);
+      overflow: hidden;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .card-img {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      flex: 1;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-content h3 {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--grey);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .card-content h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+
+    .card-content p {
+      font-size: 1rem;
+      color: var(--grey);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .current-price {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green-500);
+    }
+
+    .old-price {
+      font-size: 1rem;
+      color: var(--grey);
+      text-decoration: line-through;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 16px 0;
+      background: var(--green-500);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .add-to-cart:hover {
+      background: var(--green-700);
+    }
+
+    .add-to-cart img {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        flex-direction: column;
+        max-width: 350px;
+      }
+
+      .card-img img {
+        border-radius: 16px 16px 0 0;
+        height: auto;
+      }
+
+      .card-content {
+        padding: 24px;
+      }
+    }
+  </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="card">
+        <!-- Card Image -->
+        <div class="card-img">
+          <img src="image-product-desktop.jpg"
+            alt="Gabrielle Essence Eau De Parfum">
+        </div>
+        <!-- Card Content -->
+        <div class="card-content">
+          <h3>Perfume</h3>
+          <h1>Gabrielle Essence Eau De Parfum</h1>
+          <p>
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of
+            CHANEL.
+          </p>
+          <div class="price-row">
+            <span class="current-price">$149.99</span>
+            <span class="old-price">$169.99</span>
+          </div>
+          <button class="add-to-cart">
+            <img src="icon-cart.svg" alt="cart icon">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+
+</html>
